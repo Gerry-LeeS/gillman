@@ -227,4 +227,50 @@ document.addEventListener('DOMContentLoaded', () => {
 			at.classList.toggle('active', playing);
 		});
 	}
+
+	// Songs expand/collapse with transition
+	const songsToggle = document.getElementById('songsToggle');
+	if (songsToggle) {
+		songsToggle.addEventListener('click', () => {
+			const hidden = document.querySelectorAll('.song-item[data-hidden]');
+			const expanded = songsToggle.classList.contains('expanded');
+
+			if (expanded) {
+				// Scroll back to the top of the numbers section
+				const numbersSection = document.getElementById('numbers');
+				if (numbersSection) {
+					numbersSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+
+				// Collapse after scroll has started
+				setTimeout(() => {
+					hidden.forEach((item) => {
+						item.style.opacity = '0';
+						item.style.transform = 'translateY(-10px)';
+					});
+					setTimeout(() => {
+						hidden.forEach((item) => {
+							item.style.display = 'none';
+						});
+					}, 300);
+				}, 400);
+			} else {
+				// Expand — show then stagger fade in
+				hidden.forEach((item, i) => {
+					item.style.display = 'grid';
+					item.style.opacity = '0';
+					item.style.transform = 'translateY(15px)';
+					setTimeout(() => {
+						item.style.opacity = '1';
+						item.style.transform = 'translateY(0)';
+					}, 40 * i);
+				});
+			}
+
+			songsToggle.classList.toggle('expanded');
+			songsToggle.querySelector('.songs-toggle-text').textContent = expanded
+				? 'Show All 17 Songs'
+				: 'Show Less';
+		});
+	}
 });

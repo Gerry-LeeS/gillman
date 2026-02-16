@@ -2323,3 +2323,44 @@ a {
 		gap: 1.5rem;
 	}
 }
+
+/* Songs toggle button */
+.songs-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	margin: 2rem auto 0;
+	padding: 0.8rem 2rem;
+	background: none;
+	border: 1px solid rgba(0, 255, 204, 0.15);
+	color: var(--lagoon-mist);
+	font-family: var(--font-body);
+	font-size: 0.75rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	opacity: 0.6;
+}
+
+.songs-toggle:hover {
+	opacity: 1;
+	border-color: var(--lagoon-glow);
+	color: var(--lagoon-glow);
+}
+
+.songs-toggle-icon {
+	transition: transform 0.3s ease;
+	font-size: 0.9rem;
+}
+
+.songs-toggle.expanded .songs-toggle-icon {
+	transform: rotate(180deg);
+}
+
+.song-item[data-hidden] {
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease;
+}
