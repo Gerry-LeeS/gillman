@@ -4,6 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>GILLMAN — A New Musical</title>
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+		<link rel="apple-touch-icon" href="favicon-180.png" />
 		<meta
 			name="description"
 			content="GILLMAN — A New Musical. From the depths of the Amazon to the heart of the stage. Now playing."
@@ -14,8 +17,10 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="fx-frayed-ticket.css" />
 	</head>
 	<body>
+		<div class="fog-layer"></div>
 		<!-- Cursor glow effect -->
 		<div class="cursor-glow" id="cursorGlow"></div>
 
@@ -123,7 +128,7 @@
 		<!-- ═══════════════════════════════════════════════
      THE STORY
      ═══════════════════════════════════════════════ -->
-		<section class="story-section" id="story">
+		<section class="story-section caustics" id="story">
 			<div class="reveal">
 				<span class="section-label">The Story</span>
 				<h2 class="section-title">
@@ -251,79 +256,127 @@
 					<div class="song-item">
 						<span class="song-num">02</span>
 						<div>
-							<div class="song-title">Song Title TBA</div>
-							<div class="song-char">Character TBA</div>
+							<div class="song-title">See The Mighty GillMan</div>
+							<div class="song-char">Riley - The Barker</div>
 						</div>
 						<span class="song-type">Opening Number</span>
 					</div>
 					<div class="song-item">
 						<span class="song-num">03</span>
 						<div>
-							<div class="song-title">Song Title TBA</div>
-							<div class="song-char">Character TBA</div>
+							<div class="song-title">Why</div>
+							<div class="song-char">Charlotte</div>
 						</div>
-						<span class="song-type">Duet</span>
+						<span class="song-type">Female Ballad</span>
 					</div>
 					<div class="song-item">
 						<span class="song-num">04</span>
 						<div>
-							<div class="song-title">Song Title TBA</div>
-							<div class="song-char">Character TBA</div>
+							<div class="song-title">Untitled Orchestral Piece</div>
+							<div class="song-char">Orchestra</div>
 						</div>
-						<span class="song-type">Showstopper</span>
+						<span class="song-type">Instrumental</span>
 					</div>
 					<div class="song-item">
 						<span class="song-num">05</span>
 						<div>
-							<div class="song-title">Song Title TBA</div>
-							<div class="song-char">Character TBA</div>
+							<div class="song-title">Under His Spell</div>
+							<div class="song-char">Charlotte</div>
 						</div>
-						<span class="song-type">Solo</span>
+						<span class="song-type">Female Ballad</span>
 					</div>
 					<div class="song-item">
 						<span class="song-num">06</span>
 						<div>
-							<div class="song-title">Song Title TBA</div>
-							<div class="song-char">Character TBA</div>
+							<div class="song-title">Rita</div>
+							<div class="song-char">Barbershop Quartet</div>
 						</div>
-						<span class="song-type">Ballad</span>
+						<span class="song-type">Sea Shanty</span>
 					</div>
 					<div class="song-item">
 						<span class="song-num">07</span>
 						<div>
-							<div class="song-title">Song Title TBA</div>
-							<div class="song-char">Ensemble</div>
+							<div class="song-title">Monsters to Mice</div>
+							<div class="song-char">Riley</div>
 						</div>
-						<span class="song-type">Ensemble</span>
+						<span class="song-type">Male Solo</span>
 					</div>
 					<div class="song-item">
 						<span class="song-num">08</span>
 						<div>
-							<div class="song-title">Song Title TBA</div>
-							<div class="song-char">Character TBA</div>
+							<div class="song-title">Mayhem</div>
+							<div class="song-char">Riley & Charlotte</div>
 						</div>
-						<span class="song-type">Duet</span>
+						<span class="song-type">Male/Female Duet</span>
 					</div>
 					<div class="song-item">
 						<span class="song-num">09</span>
 						<div>
-							<div class="song-title">Song Title TBA</div>
-							<div class="song-char">Character TBA</div>
+							<div class="song-title">I Don't Beed Anyone (But Me)</div>
+							<div class="song-char">Charlotte</div>
 						</div>
-						<span class="song-type">Villain Solo</span>
+						<span class="song-type">Ballade</span>
 					</div>
 					<div class="song-item">
 						<span class="song-num">10</span>
 						<div>
-							<div class="song-title">Song Title TBA</div>
-							<div class="song-char">Character TBA</div>
+							<div class="song-title">Forever Free</div>
+							<div class="song-char">Charlotte</div>
 						</div>
-						<span class="song-type">11 O'Clock Number</span>
+						<span class="song-type">Female Solo</span>
 					</div>
 					<div class="song-item">
 						<span class="song-num">11</span>
 						<div>
-							<div class="song-title">Finale</div>
+							<div class="song-title">Are We</div>
+							<div class="song-char">Female/Male</div>
+						</div>
+						<span class="song-type">Male/Female Duet</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">12</span>
+						<div>
+							<div class="song-title">We Should Be Heroes</div>
+							<div class="song-char">Raymond/Riley</div>
+						</div>
+						<span class="song-type">Villain Duet</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">13</span>
+						<div>
+							<div class="song-title">A Family Thing</div>
+							<div class="song-char">Charlotte/Charlotte's Partner</div>
+						</div>
+						<span class="song-type">Duet</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">14</span>
+						<div>
+							<div class="song-title">Release Me</div>
+							<div class="song-char">Charlotte</div>
+						</div>
+						<span class="song-type">Female Solo</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">15</span>
+						<div>
+							<div class="song-title">The Creature Walks Among Us</div>
+							<div class="song-char">Full Company</div>
+						</div>
+						<span class="song-type">Showstopper</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">16</span>
+						<div>
+							<div class="song-title">Pandemonium</div>
+							<div class="song-char">Full Company</div>
+						</div>
+						<span class="song-type">11 O'Clock Number</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">17</span>
+						<div>
+							<div class="song-title">Free At Last</div>
 							<div class="song-char">Full Company</div>
 						</div>
 						<span class="song-type">Finale</span>
@@ -425,9 +478,7 @@
 						<p class="circus-presents">
 							BY SPECIAL ARRANGEMENT &bull; FOR A LIMITED ENGAGEMENT
 						</p>
-						<p class="circus-company">
-							The Bartholomew Brothers' Traveling Wonder Show
-						</p>
+						<p class="circus-company">Raymond’s Rapturous Sideshow</p>
 
 						<div class="circus-divider">
 							<div class="c-line"></div>
@@ -636,19 +687,27 @@
 			</div>
 		</section>
 
-		<!-- ═══════════════════════════════════════════════
-     NEWSLETTER
-     ═══════════════════════════════════════════════ -->
-		<section class="newsletter-section">
-			<div class="newsletter-inner reveal">
-				<h3 class="newsletter-title">Don't Miss a Ripple</h3>
-				<p class="newsletter-desc">
-					Join our mailing list for exclusive content, behind-the-scenes
-					footage, ticket presales, and venue announcements.
-				</p>
-				<div class="newsletter-form">
-					<input type="email" placeholder="Enter your email address" />
-					<button>SUBSCRIBE</button>
+		<!-- CINEMATIC QUOTE + SOCIAL FOLLOW -->
+		<section class="endquote-section">
+			<div class="endquote-inner reveal">
+				<div class="endquote-marks">"</div>
+				<!-- EDIT: Replace with a line from the show or a thematic quote -->
+				<h2 class="endquote-text">
+					The water remembers what the world chose to forget.
+				</h2>
+				<div class="divider-ornament">
+					<div class="line"></div>
+					<div class="diamond"></div>
+					<div class="line"></div>
+				</div>
+				<p class="endquote-follow">Follow the Gillman</p>
+				<div class="endquote-socials">
+					<!-- EDIT: Replace # with your social URLs -->
+					<a href="#" class="social-link">Instagram</a>
+					<a href="#" class="social-link">TikTok</a>
+					<a href="#" class="social-link">X / Twitter</a>
+					<a href="#" class="social-link">Facebook</a>
+					<a href="#" class="social-link">YouTube</a>
 				</div>
 			</div>
 		</section>
@@ -662,8 +721,8 @@
 					<div class="footer-brand">
 						<div class="footer-logo">GILLMAN</div>
 						<p>
-							A new musical inspired by the classic tale of the Gill Man. Coming
-							to stages everywhere.
+							A new musical inspired by the classic horror, Creature from the
+							Black Lagoon. Coming to stages everywhere.
 						</p>
 					</div>
 					<div class="footer-col">
@@ -694,13 +753,6 @@
 
 				<div class="footer-bottom">
 					<p>&copy; 2026 GILLMAN: A New Musical. All rights reserved.</p>
-					<div class="footer-socials">
-						<a href="#">Instagram</a>
-						<!-- <a href="#">TikTok</a> -->
-						<a href="#">X / Twitter</a>
-						<a href="#">Facebook</a>
-						<a href="#">YouTube</a>
-					</div>
 				</div>
 			</div>
 		</footer>

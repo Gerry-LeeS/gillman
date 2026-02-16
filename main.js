@@ -7,27 +7,45 @@ document.addEventListener('DOMContentLoaded', () => {
 	/* ─────────────────────────────────────────────
      CURSOR GLOW EFFECT
      ───────────────────────────────────────────── */
-	const cursorGlow = document.getElementById('cursorGlow');
-	if (cursorGlow) {
-		let mouseX = 0,
-			mouseY = 0,
-			glowX = 0,
-			glowY = 0;
+	// Cursor glow
+	const cg = document.getElementById('cursorGlow');
+	if (cg) {
+		let mx = 0,
+			my = 0,
+			gx = 0,
+			gy = 0;
+		let glowVisible = true;
 
 		document.addEventListener('mousemove', (e) => {
-			mouseX = e.clientX;
-			mouseY = e.clientY;
+			mx = e.clientX;
+			my = e.clientY;
+
+			// Hide glow over circus section
+			const circusFrame = document.querySelector('.circus-frame');
+			if (circusFrame) {
+				const rect = circusFrame.getBoundingClientRect();
+				const overCircus =
+					e.clientX >= rect.left &&
+					e.clientX <= rect.right &&
+					e.clientY >= rect.top &&
+					e.clientY <= rect.bottom;
+				if (overCircus && glowVisible) {
+					cg.style.opacity = '0';
+					glowVisible = false;
+				} else if (!overCircus && !glowVisible) {
+					cg.style.opacity = '1';
+					glowVisible = true;
+				}
+			}
 		});
 
-		function animateGlow() {
-			glowX += (mouseX - glowX) * 0.1;
-			glowY += (mouseY - glowY) * 0.1;
-			cursorGlow.style.left = glowX + 'px';
-			cursorGlow.style.top = glowY + 'px';
-			requestAnimationFrame(animateGlow);
-		}
-
-		animateGlow();
+		(function animate() {
+			gx += (mx - gx) * 0.1;
+			gy += (my - gy) * 0.1;
+			cg.style.left = gx + 'px';
+			cg.style.top = gy + 'px';
+			requestAnimationFrame(animate);
+		})();
 	}
 
 	/* ─────────────────────────────────────────────

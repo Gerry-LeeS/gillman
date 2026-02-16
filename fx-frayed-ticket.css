@@ -1,0 +1,180 @@
+/* ═══════════════════════════════════════════════════════════════
+   fx-frayed-ticket.css — Waterlogged / Frayed Playbill Edges
+   
+   Gives the circus frame irregular, torn edges like an old
+   poster that's been submerged. Uses clip-path on the frame
+   and a ragged overlay.
+   
+   Usage:  Add <link rel="stylesheet" href="fx-frayed-ticket.css">
+   Remove: Delete the link tag.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Override the clean border with a frayed clip */
+.circus-frame {
+	border: none !important;
+	clip-path: polygon(
+		/* Top edge — slightly ragged */ 0.5% 0.8%,
+		3% 0%,
+		5.5% 0.5%,
+		8% 0.2%,
+		12% 0.7%,
+		15% 0%,
+		18% 0.4%,
+		22% 0.1%,
+		25% 0.6%,
+		28% 0%,
+		32% 0.3%,
+		36% 0.8%,
+		40% 0.1%,
+		44% 0.5%,
+		48% 0%,
+		52% 0.4%,
+		56% 0.7%,
+		60% 0.1%,
+		64% 0.5%,
+		68% 0%,
+		72% 0.6%,
+		76% 0.2%,
+		80% 0.7%,
+		84% 0%,
+		88% 0.4%,
+		91% 0.1%,
+		94% 0.6%,
+		97% 0.2%,
+		99.5% 0.5%,
+
+		/* Right edge — more torn, water damaged */ 100% 3%,
+		99.3% 5%,
+		100% 8%,
+		99.5% 12%,
+		100% 15%,
+		99.2% 18%,
+		99.8% 22%,
+		99.4% 26%,
+		100% 30%,
+		99.6% 34%,
+		99.1% 38%,
+		99.7% 42%,
+		100% 46%,
+		99.3% 50%,
+		99.8% 54%,
+		100% 58%,
+		99.5% 62%,
+		99.1% 65%,
+		99.7% 68%,
+		100% 72%,
+		99.4% 76%,
+		100% 80%,
+		99.2% 83%,
+		99.8% 86%,
+		100% 89%,
+		99.5% 92%,
+		99.8% 95%,
+		100% 97%,
+
+		/* Bottom edge — most damaged, torn corner */ 99.2% 100%,
+		97% 99.5%,
+		94% 100%,
+		91% 99.3%,
+		88% 99.8%,
+		85% 100%,
+		82% 99.4%,
+		79% 99.9%,
+		76% 100%,
+		72% 99.2%,
+		68% 99.7%,
+		64% 100%,
+		60% 99.5%,
+		56% 99.1%,
+		52% 99.8%,
+		48% 100%,
+		44% 99.4%,
+		40% 99.9%,
+		36% 99.3%,
+		32% 100%,
+		28% 99.6%,
+		24% 100%,
+		20% 99.2%,
+		16% 99.7%,
+		12% 100%,
+		8% 99.5%,
+		5% 99.1%,
+		3% 99.8%,
+		0.8% 99.4%,
+
+		/* Left edge — moderate damage */ 0% 97%,
+		0.6% 94%,
+		0.1% 91%,
+		0.7% 88%,
+		0% 85%,
+		0.5% 82%,
+		0.2% 78%,
+		0.8% 74%,
+		0% 70%,
+		0.4% 66%,
+		0.1% 62%,
+		0.6% 58%,
+		0% 54%,
+		0.7% 50%,
+		0.2% 46%,
+		0.5% 42%,
+		0% 38%,
+		0.8% 34%,
+		0.3% 30%,
+		0.6% 26%,
+		0% 22%,
+		0.4% 18%,
+		0.1% 14%,
+		0.7% 10%,
+		0% 7%,
+		0.5% 4%
+	);
+}
+
+/* Rough inner shadow to darken the edges like water staining */
+.circus-frame::before {
+	/* Keep the ❖ ornament but add edge darkening */
+	filter: none;
+}
+
+/* Water stain / darkened edges overlay */
+.circus-bg::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	pointer-events: none;
+	background: radial-gradient(
+		ellipse at center,
+		transparent 50%,
+		rgba(0, 255, 204, 0.015) 100%
+	);
+}
+
+.circus-bg > * {
+	position: relative;
+	z-index: 2;
+}
+
+/* Since we removed the border, add a subtle inner edge glow */
+.circus-frame {
+	box-shadow:
+		inset 0 0 30px rgba(0, 0, 0, 0.6),
+		inset 0 0 80px rgba(0, 0, 0, 0.3),
+		0 0 60px rgba(0, 0, 0, 0.5),
+		0 0 20px rgba(0, 255, 204, 0.02) !important;
+}
+
+/* Hide the corner ornaments since the edges are now frayed */
+.circus-corner {
+	display: none;
+}
+
+/* The ❖ ornaments at top/bottom no longer make sense on torn edges */
+.circus-frame::before,
+.circus-frame::after {
+	display: none;
+}
