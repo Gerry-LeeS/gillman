@@ -1,0 +1,182 @@
+/* ═══════════════════════════════════════════════════════════════
+   subpage.css — Shared styles for FAQ, Accessibility, etc.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Subpage header — smooth gradient, no hard cut */
+.subpage-header {
+	padding: 10rem 3rem 5rem;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	background:
+		radial-gradient(
+			ellipse 80% 50% at 50% 70%,
+			rgba(0, 255, 204, 0.04) 0%,
+			transparent 60%
+		),
+		linear-gradient(180deg, var(--lagoon-deep) 0%, #030f0c 100%);
+}
+
+/* Content area — continues the dark gradient smoothly */
+.subpage-content {
+	position: relative;
+	z-index: 1;
+	padding: 0 3rem 8rem;
+	max-width: 800px;
+	margin: 0 auto;
+	background: transparent;
+}
+
+/* ── Typography ── */
+.subpage-content h2 {
+	font-family: var(--font-serif);
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: var(--lagoon-cream);
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+}
+
+.subpage-content h2:first-of-type {
+	margin-top: 0;
+}
+
+.subpage-content p {
+	font-family: var(--font-elegant);
+	font-size: 1.1rem;
+	line-height: 1.9;
+	color: var(--lagoon-mist);
+	margin-bottom: 1rem;
+}
+
+.subpage-content ul {
+	list-style: none;
+	margin-bottom: 1.5rem;
+}
+
+.subpage-content ul li {
+	font-family: var(--font-elegant);
+	font-size: 1.05rem;
+	color: var(--lagoon-mist);
+	padding: 0.5rem 0;
+	padding-left: 1.5rem;
+	position: relative;
+	line-height: 1.6;
+}
+
+.subpage-content ul li::before {
+	content: '◆';
+	position: absolute;
+	left: 0;
+	font-size: 0.5rem;
+	color: var(--lagoon-glow);
+	top: 0.8rem;
+}
+
+.subpage-content a {
+	color: var(--lagoon-glow);
+	text-decoration: none;
+	border-bottom: 1px solid rgba(31, 255, 170, 0.3);
+	transition: border-color 0.3s;
+}
+
+.subpage-content a:hover {
+	border-color: var(--lagoon-glow);
+}
+
+/* Contact card */
+.contact-card {
+	margin-top: 2rem;
+	padding: 2rem;
+	background: rgba(0, 255, 204, 0.02);
+	border: 1px solid rgba(0, 255, 204, 0.08);
+}
+
+.contact-card p {
+	margin-bottom: 0.5rem;
+}
+
+.contact-card strong {
+	color: var(--lagoon-cream);
+}
+
+/* ── FAQ Accordion ── */
+.faq-list {
+	margin-top: 2rem;
+}
+
+.faq-item {
+	border-bottom: 1px solid rgba(0, 255, 204, 0.06);
+}
+
+.faq-item:first-child {
+	border-top: 1px solid rgba(0, 255, 204, 0.06);
+}
+
+.faq-question {
+	width: 100%;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 1.5rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: left;
+	color: var(--lagoon-cream);
+	transition: color 0.3s;
+}
+
+.faq-question:hover {
+	color: var(--lagoon-glow);
+}
+
+.faq-question span:first-child {
+	font-family: var(--font-serif);
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.faq-icon {
+	font-family: var(--font-display);
+	font-size: 1.5rem;
+	color: var(--lagoon-green);
+	transition:
+		transform 0.3s,
+		color 0.3s;
+	line-height: 1;
+	flex-shrink: 0;
+	margin-left: 1rem;
+}
+
+.faq-item.open .faq-icon {
+	transform: rotate(45deg);
+	color: var(--lagoon-glow);
+}
+
+.faq-answer {
+	max-height: 0;
+	overflow: hidden;
+	transition:
+		max-height 0.4s ease,
+		padding 0.4s ease;
+}
+
+.faq-item.open .faq-answer {
+	max-height: 300px;
+	padding-bottom: 1.5rem;
+}
+
+.faq-answer p {
+	font-family: var(--font-elegant);
+	font-size: 1.05rem;
+	color: var(--lagoon-mist);
+	line-height: 1.8;
+	opacity: 0.8;
+}
+
+.faq-answer a {
+	color: var(--lagoon-glow);
+	text-decoration: none;
+	border-bottom: 1px solid var(--lagoon-glow);
+}

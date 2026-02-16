@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>GILLMAN — A New Musical</title>
+		<meta
+			name="description"
+			content="GILLMAN — A New Musical. From the depths of the Amazon to the heart of the stage. Now playing."
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<!-- Cursor glow effect -->
+		<div class="cursor-glow" id="cursorGlow"></div>
+
+		<!-- Floating bubbles -->
+		<div class="bubbles">
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+			<div class="bubble"></div>
+		</div>
+
+		<!-- Particle Canvas -->
+		<canvas id="particles-canvas"></canvas>
+
+		<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════ -->
+		<nav class="nav" id="mainNav">
+			<a href="index.html" class="nav-logo">GILLMAN</a>
+			<ul class="nav-links" id="navLinks">
+				<li><a href="#story">The Story</a></li>
+				<li><a href="#numbers">The Numbers</a></li>
+				<li><a href="#listen">Listen</a></li>
+				<li><a href="#gallery">Gallery</a></li>
+				<li><a href="#reviews">Reviews</a></li>
+				<li><a href="faq.html">FAQ</a></li>
+				<li><a href="#tickets" class="nav-cta">Get Tickets</a></li>
+			</ul>
+			<button
+				class="audio-toggle"
+				id="audioToggle"
+				title="Toggle ambient soundscape"
+			>
+				<div class="audio-bars">
+					<span></span><span></span><span></span><span></span>
+				</div>
+				<span class="audio-label">Ambience</span>
+			</button>
+			<button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+				<span></span><span></span><span></span>
+			</button>
+		</nav>
+
+		<!-- ═══════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════ -->
+		<section class="hero" id="hero">
+			<div class="hero-bg"></div>
+			<div class="hero-ripple">
+				<div class="ring"></div>
+				<div class="ring"></div>
+				<div class="ring"></div>
+				<div class="ring"></div>
+			</div>
+			<div class="hero-fog"></div>
+
+			<div class="hero-content">
+				<p class="hero-tagline">
+					From the depths of the Amazon to the heart of the stage
+				</p>
+				<h1 class="hero-title">GILLMAN</h1>
+				<p class="hero-subtitle">A New Musical</p>
+				<div class="hero-divider"></div>
+				<p class="hero-info">Coming Soon</p>
+				<div class="hero-ctas">
+					<a href="#tickets" class="btn-primary">GET TICKETS</a>
+					<a href="#listen" class="btn-secondary">LISTEN NOW</a>
+				</div>
+			</div>
+
+			<div class="scroll-indicator">
+				<span>Descend</span>
+				<div class="scroll-line"></div>
+			</div>
+		</section>
+
+		<!-- ═══════════════════════════════════════════════
+     MARQUEE TICKER
+     ─────────────────────────────────────────────
+     EDIT: Change the ticker quotes and accolades
+     below. Duplicate the full set to keep the
+     seamless loop.
+     ═══════════════════════════════════════════════ -->
+		<div class="marquee-section">
+			<div class="marquee-track">
+				<!-- === FIRST HALF (edit these) === -->
+				<span>Marquee Quote 1</span><span class="dot">◆</span>
+				<span>Marquee Quote 2</span><span class="dot">◆</span>
+				<span>Marquee Quote 3</span><span class="dot">◆</span>
+				<span>Marquee Quote 4</span><span class="dot">◆</span>
+				<span>Marquee Quote 5</span><span class="dot">◆</span>
+				<!-- === DUPLICATE (keep identical to above for seamless loop) === -->
+				<span>Marquee Quote 1</span><span class="dot">◆</span>
+				<span>Marquee Quote 2</span><span class="dot">◆</span>
+				<span>Marquee Quote 3</span><span class="dot">◆</span>
+				<span>Marquee Quote 4</span><span class="dot">◆</span>
+				<span>Marquee Quote 5</span><span class="dot">◆</span>
+			</div>
+		</div>
+
+		<!-- ═══════════════════════════════════════════════
+     THE STORY
+     ═══════════════════════════════════════════════ -->
+		<section class="story-section" id="story">
+			<div class="reveal">
+				<span class="section-label">The Story</span>
+				<h2 class="section-title">
+					Every monster has <em>a story.</em><br />This one has a song.
+				</h2>
+			</div>
+
+			<div class="story-grid">
+				<div class="story-text reveal">
+					<p>
+						Deep in the uncharted reaches of the Amazon, where the black water
+						meets a sky it has never learned to trust, there lived a creature —
+						ancient, unknowable, alone. When an expedition ventured into his
+						domain, they dragged him from the lagoon in chains, believing the
+						story was over. It was only beginning.
+					</p>
+					<p>
+						Sold to a traveling wonder show and billed as the Eighth Wonder of
+						the World, the creature is caged, paraded beneath the circus lights,
+						and reduced from marvel of nature to spectacle of cruelty. But
+						within the fraying canvas of the big top, an unlikely bond ignites —
+						and the creature must discover whether a world that captured him has
+						any room for what he truly is.
+					</p>
+				</div>
+
+				<div class="story-visual reveal">
+					<!-- ─────────────────────────────────────
+           QUOTE CARD — Edit the quote and
+           attribution below as needed
+           ───────────────────────────────────── -->
+					<div class="story-card">
+						<blockquote>
+							"Every great musical invites us to feel something we didn't expect
+							— and to leave the theatre forever changed."
+						</blockquote>
+						<cite>— Quote attribution here</cite>
+					</div>
+
+					<!-- ─────────────────────────────────────
+           ACT BREAKDOWN — Edit titles and
+           descriptions for each act
+           ───────────────────────────────────── -->
+					<div class="story-acts">
+						<div class="act-item">
+							<span class="act-number">I</span>
+							<div>
+								<div class="act-title">Act I Title</div>
+								<div class="act-desc">
+									Act I description — a brief teaser of what the audience will
+									experience in the first act.
+								</div>
+							</div>
+						</div>
+						<div class="act-item">
+							<span class="act-number">II</span>
+							<div>
+								<div class="act-title">Act II Title</div>
+								<div class="act-desc">
+									Act II description — the stakes rise, relationships deepen,
+									and the world of the show expands.
+								</div>
+							</div>
+						</div>
+						<div class="act-item">
+							<span class="act-number">III</span>
+							<div>
+								<div class="act-title">Act III Title</div>
+								<div class="act-desc">
+									Act III description — everything comes to a head in a finale
+									that will leave no heart untouched.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CREATOR SPOTLIGHT -->
+		<section class="creator-section">
+			<div class="creator-inner reveal">
+				<p class="creator-label">Script · Music · Lyrics · Orchestrations</p>
+				<h2 class="creator-title">From the <em>Mind</em> of</h2>
+				<!-- EDIT: Replace with creator's name -->
+				<div class="creator-name">CREATOR NAME</div>
+				<div class="creator-roles">
+					<span class="creator-role-tag">Script</span>
+					<span class="creator-role-tag">Music</span>
+					<span class="creator-role-tag">Lyrics</span>
+					<span class="creator-role-tag">Orchestrations</span>
+				</div>
+				<!-- EDIT: Replace with creator's bio -->
+				<p class="creator-bio">
+					Every note. Every word. Every moment of this production was born from
+					a single creative vision. A story that demanded to be told — and one
+					artist who heard its call from the deep.
+				</p>
+			</div>
+		</section>
+
+		<!-- ═══════════════════════════════════════════════
+     THE NUMBERS (Song List)
+     ─────────────────────────────────────────────
+     EDIT: Replace "Song Title TBA" with final
+     song names when ready. Character names and
+     song types are also editable.
+     ═══════════════════════════════════════════════ -->
+		<section class="numbers-section" id="numbers">
+			<div class="numbers-inner">
+				<div class="reveal">
+					<span class="section-label">Original Cast Recording</span>
+					<h2 class="section-title">The <em>Numbers</em></h2>
+				</div>
+
+				<div class="song-list reveal">
+					<div class="song-item">
+						<span class="song-num">01</span>
+						<div>
+							<div class="song-title">Overture</div>
+							<div class="song-char">Orchestra</div>
+						</div>
+						<span class="song-type">Instrumental</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">02</span>
+						<div>
+							<div class="song-title">Song Title TBA</div>
+							<div class="song-char">Character TBA</div>
+						</div>
+						<span class="song-type">Opening Number</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">03</span>
+						<div>
+							<div class="song-title">Song Title TBA</div>
+							<div class="song-char">Character TBA</div>
+						</div>
+						<span class="song-type">Duet</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">04</span>
+						<div>
+							<div class="song-title">Song Title TBA</div>
+							<div class="song-char">Character TBA</div>
+						</div>
+						<span class="song-type">Showstopper</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">05</span>
+						<div>
+							<div class="song-title">Song Title TBA</div>
+							<div class="song-char">Character TBA</div>
+						</div>
+						<span class="song-type">Solo</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">06</span>
+						<div>
+							<div class="song-title">Song Title TBA</div>
+							<div class="song-char">Character TBA</div>
+						</div>
+						<span class="song-type">Ballad</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">07</span>
+						<div>
+							<div class="song-title">Song Title TBA</div>
+							<div class="song-char">Ensemble</div>
+						</div>
+						<span class="song-type">Ensemble</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">08</span>
+						<div>
+							<div class="song-title">Song Title TBA</div>
+							<div class="song-char">Character TBA</div>
+						</div>
+						<span class="song-type">Duet</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">09</span>
+						<div>
+							<div class="song-title">Song Title TBA</div>
+							<div class="song-char">Character TBA</div>
+						</div>
+						<span class="song-type">Villain Solo</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">10</span>
+						<div>
+							<div class="song-title">Song Title TBA</div>
+							<div class="song-char">Character TBA</div>
+						</div>
+						<span class="song-type">11 O'Clock Number</span>
+					</div>
+					<div class="song-item">
+						<span class="song-num">11</span>
+						<div>
+							<div class="song-title">Finale</div>
+							<div class="song-char">Full Company</div>
+						</div>
+						<span class="song-type">Finale</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ═══════════════════════════════════════════════
+     LISTEN (Music Player / Embed)
+     ─────────────────────────────────────────────
+     Replace the .listen-placeholder div below
+     with your streaming service embed iframe:
+
+     SPOTIFY EXAMPLE:
+     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/YOUR_ALBUM_ID?theme=0"
+       width="100%" height="380" frameBorder="0"
+       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+       loading="lazy"></iframe>
+
+     APPLE MUSIC EXAMPLE:
+     <iframe allow="autoplay *; encrypted-media *; fullscreen *"
+       src="https://embed.music.apple.com/us/album/YOUR_ALBUM_ID"
+       width="100%" height="450" frameborder="0"
+       style="border-radius:12px;overflow:hidden;background:transparent"></iframe>
+
+     SOUNDCLOUD EXAMPLE:
+     <iframe width="100%" height="300" scrolling="no" frameborder="no"
+       src="https://w.soundcloud.com/player/?url=YOUR_PLAYLIST_URL&color=%231fffaa&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true">
+     </iframe>
+     ═══════════════════════════════════════════════ -->
+		<section class="listen-section" id="listen">
+			<div class="listen-inner">
+				<div class="reveal">
+					<span class="section-label">Hear the Music</span>
+					<h2 class="section-title">
+						Listen to the <em>Original Cast Recording</em>
+					</h2>
+				</div>
+
+				<div class="listen-frame-wrapper reveal">
+					<div class="listen-placeholder">
+						<div class="play-icon">
+							<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" /></svg>
+						</div>
+						<p>Original Cast Recording</p>
+						<small
+							>Embed your Spotify, Apple Music, or SoundCloud playlist
+							here</small
+						>
+						<div class="soundwave">
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ═══════════════════════════════════════════════
+     CIRCUS / FREAK SHOW INTERLUDE
+     — Vintage sideshow playbill aesthetic
+     ═══════════════════════════════════════════════ -->
+		<section class="circus-section">
+			<div class="circus-bg">
+				<div class="reveal">
+					<div class="circus-frame">
+						<!-- Corner ornaments -->
+						<div class="circus-corner tl"></div>
+						<div class="circus-corner tr"></div>
+						<div class="circus-corner bl"></div>
+						<div class="circus-corner br"></div>
+
+						<!-- Carnival light bulbs -->
+						<div class="carnival-lights">
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+						</div>
+
+						<p class="circus-presents">
+							BY SPECIAL ARRANGEMENT &bull; FOR A LIMITED ENGAGEMENT
+						</p>
+						<p class="circus-company">
+							The Bartholomew Brothers' Traveling Wonder Show
+						</p>
+
+						<div class="circus-divider">
+							<div class="c-line"></div>
+							<div class="c-star">★</div>
+							<div class="c-line"></div>
+						</div>
+
+						<p class="circus-subheadline">PRESENTS FOR YOUR ASTONISHMENT</p>
+
+						<h2 class="circus-headline">THE GILLMAN</h2>
+
+						<p class="circus-subheadline">EIGHTH WONDER OF THE WORLD</p>
+
+						<div class="circus-divider">
+							<div class="c-line"></div>
+							<div class="c-star">★</div>
+							<div class="c-line"></div>
+						</div>
+
+						<p class="circus-description">
+							Witness the beast that science cannot explain. Marvel at the
+							living fossil dragged from the darkest reaches of the Amazon. A
+							creature that walks between two worlds — neither man nor fish, but
+							something older, stranger, and more terrifying than either. One
+							performance only. Every night. Until the water calls him home.
+						</p>
+
+						<div class="circus-admission">
+							<span>ADMIT ONE</span>
+						</div>
+
+						<p class="circus-tagline">
+							"You can cage a body. You cannot silence a song born in the deep."
+						</p>
+
+						<!-- Bottom carnival lights -->
+						<div class="carnival-lights-bottom">
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+							<div class="carnival-bulb"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ═══════════════════════════════════════════════
+     GALLERY — Production Photos
+     ─────────────────────────────────────────────
+     Replace placeholder labels with <img> tags
+     when production photos are ready.
+     ═══════════════════════════════════════════════ -->
+		<section class="gallery-section" id="gallery">
+			<div class="gallery-inner">
+				<div class="reveal">
+					<span class="section-label">Production</span>
+					<h2 class="section-title">From the <em>Stage</em></h2>
+				</div>
+
+				<div class="gallery-grid reveal">
+					<div class="gallery-item">
+						<span class="placeholder-label">Act I Opening</span>
+					</div>
+					<div class="gallery-item">
+						<span class="placeholder-label">The Set</span>
+					</div>
+					<div class="gallery-item">
+						<span class="placeholder-label">Gill's First Appearance</span>
+					</div>
+					<div class="gallery-item">
+						<span class="placeholder-label">The Ensemble</span>
+					</div>
+					<div class="gallery-item">
+						<span class="placeholder-label">The 11 O'Clock Number</span>
+					</div>
+					<div class="gallery-item">
+						<span class="placeholder-label">The Big Top</span>
+					</div>
+					<div class="gallery-item">
+						<span class="placeholder-label">The Finale</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ═══════════════════════════════════════════════
+     CRITICAL ACCLAIM / REVIEWS
+     ─────────────────────────────────────────────
+     EDIT: Change the review text and source for
+     each .review-card below. Add or remove cards
+     and matching .review-dot buttons as needed.
+     ═══════════════════════════════════════════════ -->
+		<section class="reviews-section" id="reviews">
+			<div class="reviews-inner">
+				<div class="reveal">
+					<span class="section-label">Critical Acclaim</span>
+					<h2 class="section-title">What They're <em>Saying</em></h2>
+
+					<div class="stars">
+						<span class="star">★</span>
+						<span class="star">★</span>
+						<span class="star">★</span>
+						<span class="star">★</span>
+						<span class="star">★</span>
+					</div>
+				</div>
+
+				<div class="reviews-carousel reveal" id="reviewsCarousel">
+					<!-- REVIEW 1 — Edit text and source -->
+					<div class="review-card" data-review="0">
+						<p class="review-text">
+							"Review quote goes here. Replace this with your first critical
+							review or press quote."
+						</p>
+						<span class="review-source">— Publication Name</span>
+					</div>
+
+					<!-- REVIEW 2 — Edit text and source -->
+					<div class="review-card" data-review="1" style="display: none">
+						<p class="review-text">
+							"Second review quote goes here. Replace this with another critical
+							review or press quote."
+						</p>
+						<span class="review-source">— Publication Name</span>
+					</div>
+
+					<!-- REVIEW 3 — Edit text and source -->
+					<div class="review-card" data-review="2" style="display: none">
+						<p class="review-text">
+							"Third review quote goes here. Replace this with another critical
+							review or press quote."
+						</p>
+						<span class="review-source">— Publication Name</span>
+					</div>
+				</div>
+
+				<div class="review-nav">
+					<button class="review-dot active" data-index="0"></button>
+					<button class="review-dot" data-index="1"></button>
+					<button class="review-dot" data-index="2"></button>
+				</div>
+			</div>
+		</section>
+
+		<!-- ═══════════════════════════════════════════════
+     TICKETS / VENUES
+     ─────────────────────────────────────────────
+     EDIT: Each .venue-card is a theatre/venue.
+     Update the href to link to the theatre's
+     own ticketing page. Add or remove cards
+     as venues are confirmed.
+     ═══════════════════════════════════════════════ -->
+		<section class="tickets-section" id="tickets">
+			<div class="tickets-inner">
+				<div class="tickets-hero reveal">
+					<span class="section-label">Box Office</span>
+					<h2 class="section-title">Secure Your <em>Seats</em></h2>
+					<p class="tickets-subtitle">
+						GILLMAN will be performed at theatres across the country. Select
+						your venue below to purchase tickets directly from the theatre.
+					</p>
+				</div>
+
+				<div class="venue-selector reveal">
+					<span class="venue-selector-label">Select Your Theatre</span>
+
+					<div class="venue-grid">
+						<!-- VENUE 1 — Edit name, location, dates, and href -->
+						<a href="#" class="venue-card" target="_blank" rel="noopener">
+							<div class="venue-name">Theatre Name</div>
+							<div class="venue-location">City, State</div>
+							<div class="venue-dates">Dates TBA</div>
+							<span class="venue-cta">BUY TICKETS →</span>
+						</a>
+
+						<!-- VENUE 2 -->
+						<a href="#" class="venue-card" target="_blank" rel="noopener">
+							<div class="venue-name">Theatre Name</div>
+							<div class="venue-location">City, State</div>
+							<div class="venue-dates">Dates TBA</div>
+							<span class="venue-cta">BUY TICKETS →</span>
+						</a>
+
+						<!-- VENUE 3 -->
+						<a href="#" class="venue-card" target="_blank" rel="noopener">
+							<div class="venue-name">Theatre Name</div>
+							<div class="venue-location">City, State</div>
+							<div class="venue-dates">Dates TBA</div>
+							<span class="venue-cta">BUY TICKETS →</span>
+						</a>
+					</div>
+				</div>
+
+				<p class="tickets-note">
+					Additional venues and dates will be announced. Join our mailing list
+					to be the first to know.
+				</p>
+			</div>
+		</section>
+
+		<!-- ═══════════════════════════════════════════════
+     NEWSLETTER
+     ═══════════════════════════════════════════════ -->
+		<section class="newsletter-section">
+			<div class="newsletter-inner reveal">
+				<h3 class="newsletter-title">Don't Miss a Ripple</h3>
+				<p class="newsletter-desc">
+					Join our mailing list for exclusive content, behind-the-scenes
+					footage, ticket presales, and venue announcements.
+				</p>
+				<div class="newsletter-form">
+					<input type="email" placeholder="Enter your email address" />
+					<button>SUBSCRIBE</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- ═══════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════ -->
+		<footer class="footer">
+			<div class="footer-inner">
+				<div class="footer-grid">
+					<div class="footer-brand">
+						<div class="footer-logo">GILLMAN</div>
+						<p>
+							A new musical inspired by the classic tale of the Gill Man. Coming
+							to stages everywhere.
+						</p>
+					</div>
+					<div class="footer-col">
+						<h4>The Show</h4>
+						<ul>
+							<li><a href="#story">The Story</a></li>
+							<li><a href="#numbers">Musical Numbers</a></li>
+							<li><a href="#gallery">Gallery</a></li>
+							<li><a href="#reviews">Reviews</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h4>Visit</h4>
+						<ul>
+							<li><a href="#tickets">Buy Tickets</a></li>
+							<li><a href="#">Venues & Dates</a></li>
+							<li><a href="accessibility.html">Accessibility</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h4>Connect</h4>
+						<ul>
+							<li><a href="#">Merchandise</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-bottom">
+					<p>&copy; 2026 GILLMAN: A New Musical. All rights reserved.</p>
+					<div class="footer-socials">
+						<a href="#">Instagram</a>
+						<!-- <a href="#">TikTok</a> -->
+						<a href="#">X / Twitter</a>
+						<a href="#">Facebook</a>
+						<a href="#">YouTube</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- JavaScript -->
+		<script src="ambient-audio.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
