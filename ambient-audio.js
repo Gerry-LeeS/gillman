@@ -2,7 +2,7 @@ const ambientAudio = (() => {
 	let audio = null;
 	let playing = false;
 	let fadeInterval = null;
-	const maxVolume = 0.3; // Adjust this — 0.3 is subtle, 0.5 is noticeable
+	const maxVolume = 0.08; // Adjust this — 0.3 is subtle, 0.5 is noticeable
 	const fadeStep = 0.01;
 	const fadeTime = 20; // ms per step
 
